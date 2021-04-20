@@ -1,4 +1,7 @@
 # liferay-search-configs
+
+**#WIP** (Content is updated as we are progressing with an ongoing internal [workshop series](https://grow.liferay.com/learn/Search+Workshops+for+SUHU+CSEs).)
+
 Collection of example configs and certs for quick local testing, workshops and [docs](https://learn.liferay.com/dxp/7.x/en/using_search.html).
 
 ## Introduction
