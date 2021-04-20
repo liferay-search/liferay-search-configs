@@ -15,3 +15,7 @@ Generate example cert files based on our docs: https://learn.liferay.com/dxp/lat
 1. Generate self-signed node certificate in PEM foramt (for Kibana 6.x) using the same CA: `./bin/elasticsearch-certutil cert --pem --ca config/certs/elastic-stack-ca.p12 --ca-pass liferay --dns localhost,example.com,es-node1,es-node2,es-node3,dxp.example.com,kibana.example.com`
 
     This generates an archive containing two files: **`elastic-nodes.crt`** and **`elastic-nodes.key`**.
+
+**Note**: Across the elastic stack where you need configure "trust stores", you most probably will want/need to use certificate files without a private key in a real scenario. It is just in this super-simplified setup where we can operate with the `elastic-stack-ca.p12` file which also includes the CA's private key.
+
+Alternatively, if you still want to use PKCS#12 format, you can extract the public key (certificate) from ` elastic-stack-ca.p12 ` into a different .p12 file and use that file to configure trust stores/certificate authorities. 
