@@ -1,0 +1,2 @@
+:: (You can also use the node certificate (e.g: elastic-nodes.p12 as long as it also contains the cert of the CA.)
+set "CATALINA_OPTS=%CATALINA_OPTS% -Djavax.net.ssl.trustStore=c:/path/to/config/certs/elastic-nodes.p12 -Djavax.net.ssl.trustStorePassword=liferay -Djavax.net.ssl.trustStoreType=pkcs12"
