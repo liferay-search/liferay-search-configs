@@ -12,7 +12,7 @@
 
     with commented/uncommented lines for PEM and PKCS#12
 
-* `/pki` (TBA)
+* `/pki` assuming that a certificate for DXP with the proper "Subject Name" was generated as `dxp.example.com`
 
     * `com.liferay.portal.search.elasticsearch7.configuration.XPackSecurityConfiguration.config`
     

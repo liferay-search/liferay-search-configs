@@ -9,7 +9,7 @@
 
     * `com.liferay.portal.search.elasticsearch7.configuration.ElasticsearchConfiguration.config`
 
-* `/pki` (TBA)
+* `/pki`:  assuming that a certificate for DXP with the proper "Subject Name" was generated as `dxp.example.com`
 
     * `com.liferay.portal.search.elasticsearch7.configuration.ElasticsearchConfiguration.config`
 

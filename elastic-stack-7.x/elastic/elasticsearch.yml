@@ -117,3 +117,21 @@ xpack.security.http.ssl.keystore.path: certs/elastic-nodes.p12
 xpack.security.http.ssl.keystore.password: liferay
 xpack.security.http.ssl.truststore.path: certs/elastic-nodes.p12
 xpack.security.http.ssl.truststore.password: liferay
+
+## PKI
+#xpack.security.transport.ssl.client_authentication: required
+#xpack.security.http.ssl.client_authentication: required
+#
+#xpack.security.authc.realms:
+#  pki.pki1:
+#    order: 0
+#
+### To keep the native realm also enabled (username/password):
+#  native.native1:
+#    order: 1
+
+# Network settings
+#http.port: 9200
+#node.name: es-node1
+#network.host: es-node1
+#transport.port: 9300

@@ -163,3 +163,6 @@ server.ssl.truststore.path: "config/certs/elastic-stack-ca.p12"
 server.ssl.truststore.password: "liferay"
 server.ssl.keystore.path: "config/certs/elastic-nodes.p12"    
 server.ssl.keystore.password: "liferay"
+
+#Important for PKI
+#elasticsearch.ssl.alwaysPresentCertificate: true

@@ -150,3 +150,6 @@ xpack.security.sessionTimeout: 600000
 
 #elasticsearch.ssl.alwaysPresentCertificate: true
 #logging.timezone: "Europe/Budapest"
+
+#Important for PKI
+#elasticsearch.ssl.alwaysPresentCertificate: true
