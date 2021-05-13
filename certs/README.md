@@ -6,19 +6,19 @@ Generate example cert files based on our docs: https://learn.liferay.com/dxp/lat
 
 1. Generate CA: `./bin/elasticsearch-certutil ca --ca-dn CN=elastic-ca`
   
-This generates a file called **`elastic-stack-ca.p12`**.
+    This generates a file called **`elastic-stack-ca.p12`**.
   
 1. Extract the CA's certificate (public key) from the generated file: `openssl pkcs12 -in elastic-stack-ca.p12 -out elastic-stack-ca.crt -nokeys` 
 
-This generates a file called **`elastic-stack-ca.crt`**. You will use this to configure the trustStore/certificateAuthorities in Kibana 6.x where PKCS#12 format is not supported.
+    This generates a file called **`elastic-stack-ca.crt`**. You will use this to configure the trustStore/certificateAuthorities in Kibana 6.x where PKCS#12 format is not supported.
     
 1. Generate self-signed node certificate in PKCS#12 format: `./bin/elasticsearch-certutil cert --ca config/certs/elastic-stack-ca.p12 --ca-pass liferay --dns localhost,example.com,es-node1,es-node2,es-node3,dxp.example.com,kibana.example.com`
 
-This generates a file called **`elastic-nodes.p12`**.
+    This generates a file called **`elastic-nodes.p12`**.
     
 1. Generate self-signed node certificate in PEM foramt (for Kibana 6.x) using the same CA: `./bin/elasticsearch-certutil cert --pem --ca config/certs/elastic-stack-ca.p12 --ca-pass liferay --dns localhost,example.com,es-node1,es-node2,es-node3,dxp.example.com,kibana.example.com`
 
-This generates an archive containing two files: **`elastic-nodes.crt`** and **`elastic-nodes.key`**.
+    This generates an archive containing two files: **`elastic-nodes.crt`** and **`elastic-nodes.key`**.
 
 **Note**: Across the elastic stack where you need configure "trust stores", you most probably will want/need to use certificate files without a private key (`elastic-stack-ca.crt`) in a real scenario. It is just in this super-simplified setup where we can operate with the `elastic-stack-ca.p12` file which also includes the CA's private key.
 
@@ -34,15 +34,15 @@ Assuming that you already have **`elastic-stack-ca.p12`** generated, run these c
 
 **PKCS#12**:
 
-	./bin/elasticsearch-certutil cert --ca config/certs/elastic-stack-ca.p12 --ca-pass liferay --dns localhost,dxp.example.com --name "CN=dxp.example.com,OU=Search,DC=dxp,DC=example,DC=com" --out dxp.example.com.p12
+    ./bin/elasticsearch-certutil cert --ca config/certs/elastic-stack-ca.p12 --ca-pass liferay --dns localhost,dxp.example.com --name "CN=dxp.example.com,OU=Search,DC=dxp,DC=example,DC=com" --out dxp.example.com.p12
 
-	./bin/elasticsearch-certutil cert --ca config/certs/elastic-stack-ca.p12 --ca-pass liferay --dns localhost,kibana.example.com --name "CN=kibana.example.com,OU=Search,DC=kibana,DC=example,DC=com" --out kibana.example.com.p12
+    ./bin/elasticsearch-certutil cert --ca config/certs/elastic-stack-ca.p12 --ca-pass liferay --dns localhost,kibana.example.com --name "CN=kibana.example.com,OU=Search,DC=kibana,DC=example,DC=com" --out kibana.example.com.p12
 
 **PEM**:
 
-	./bin/elasticsearch-certutil cert --pem --ca config/certs/elastic-stack-ca.p12 --ca-pass liferay --dns localhost,dxp.example.com --name "CN=dxp.example.com,OU=Search,DC=dxp,DC=example,DC=com"
+    ./bin/elasticsearch-certutil cert --pem --ca config/certs/elastic-stack-ca.p12 --ca-pass liferay --dns localhost,dxp.example.com --name "CN=dxp.example.com,OU=Search,DC=dxp,DC=example,DC=com"
 
-	./bin/elasticsearch-certutil cert --pem --ca config/certs/elastic-stack-ca.p12 --ca-pass liferay --dns localhost,kibana.example.com --name "CN=kibana.example.com,OU=Search,DC=kibana,DC=example,DC=com"
+    ./bin/elasticsearch-certutil cert --pem --ca config/certs/elastic-stack-ca.p12 --ca-pass liferay --dns localhost,kibana.example.com --name "CN=kibana.example.com,OU=Search,DC=kibana,DC=example,DC=com"
 
 (Note: extract the files from the generated archive and rename them to `*.key` and `*.crt`.)
 
@@ -50,7 +50,7 @@ Assuming that you already have **`elastic-stack-ca.p12`** generated, run these c
 
 You can run this `curl` command below to test the authentication using the certificates when Elasticsearch is already configured to use PKI and require clients to authenticate on the `HTTP` layer:
 
-	curl https://localhost:9200/_xpack/security/_authenticate?pretty --cert dxp.example.com.crt --key dxp.example.com.key --cacert elastic-stack-ca.crt -k -v
+    curl https://localhost:9200/_xpack/security/_authenticate?pretty --cert dxp.example.com.crt --key dxp.example.com.key --cacert elastic-stack-ca.crt -k -v
 
 The response should look something like this:
 
