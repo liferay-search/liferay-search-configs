@@ -12,13 +12,13 @@ Generate example cert files based on our docs: https://learn.liferay.com/dxp/lat
 
     This generates a file called **`elastic-stack-ca.crt`**. You will use this to configure the trustStore/certificateAuthorities in Kibana 6.x where PKCS#12 format is not supported.
     
-1. Generate self-signed node certificate in PKCS#12 format: `./bin/elasticsearch-certutil cert --ca config/certs/elastic-stack-ca.p12 --ca-pass liferay --dns localhost,example.com,es-node1,es-node2,es-node3,dxp.example.com,kibana.example.com`
+1. Generate self-signed node certificate in PKCS#12 format: `./bin/elasticsearch-certutil cert --ca config/certs/elastic-stack-ca.p12 --ca-pass liferay --dns localhost,example.com,es-node1,es-node2,es-node3,dxp.example.com,kibana.example.com --out elastic-nodes.p12`
 
-    This generates a file called **`elastic-nodes.p12`**.
+    Enter the password when prompted. This generates a file called **`elastic-nodes.p12`**.
     
-1. Generate self-signed node certificate in PEM foramt (for Kibana 6.x) using the same CA: `./bin/elasticsearch-certutil cert --pem --ca config/certs/elastic-stack-ca.p12 --ca-pass liferay --dns localhost,example.com,es-node1,es-node2,es-node3,dxp.example.com,kibana.example.com`
+1. Generate self-signed node certificate in PEM foramt (for Kibana 6.x) using the same CA: `./bin/elasticsearch-certutil cert --pem --ca config/certs/elastic-stack-ca.p12 --ca-pass liferay --dns localhost,example.com,es-node1,es-node2,es-node3,dxp.example.com,kibana.example.com --name elastic-nodes --out elastic-nodes.zip`
 
-    This generates an archive containing two files: **`elastic-nodes.crt`** and **`elastic-nodes.key`**.
+    Enter the password when prompted. This generates an archive containing two files: **`elastic-nodes.crt`** and **`elastic-nodes.key`**.
 
 **Note**: Across the elastic stack where you need configure "trust stores", you most probably will want/need to use certificate files without a private key (`elastic-stack-ca.crt`) in a real scenario. It is just in this super-simplified setup where we can operate with the `elastic-stack-ca.p12` file which also includes the CA's private key.
 
