@@ -25,3 +25,7 @@ So how to tackle with this?
     * Liferay's OSGi .config files can also have comment blocks, however it's much sensitive to where they can be placed so sometimes it's still better to create a separate file
 1. Don't be afraid of restarting from scratch
         Problems can happen any time, so prepare for wiping out your Elasticsearch nodes and start over from scratch. It really takes only a few steps to get to the point where you left previously.
+
+## Troubleshooting
+
+See the [troubleshooting](troubleshooting.md) article.
