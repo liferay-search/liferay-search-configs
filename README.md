@@ -1,4 +1,4 @@
-# liferay-search-configs
+# Overview of the liferay-search-configs repository
 
 Collection of example configs and certs for quick local testing, workshops and [docs](https://learn.liferay.com/dxp/latest/en/using-search/installing-and-upgrading-a-search-engine/elasticsearch.html).
 
