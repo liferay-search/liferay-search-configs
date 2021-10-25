@@ -2,6 +2,10 @@
 
 This article is a repository of solutions and workarounds based on past cases. In the interest of providing helpful knowledge immediately, this may be presented in an unedited form. Users are responsible for verifying how well the information fits with their particular situation and project requirements. 
 
+## Troubleshooting Resources at learn.liferay.com
+
+https://learn.liferay.com/dxp/latest/en/using-search/installing-and-upgrading-a-search-engine/elasticsearch/troubleshooting-elasticsearch-installation.html
+
 ## Information to Gather to help Diagnosing
 
 **Basic Information**
