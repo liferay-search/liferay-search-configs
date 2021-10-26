@@ -780,7 +780,9 @@ This can happen when the the `.p12` files was generated using `keytool` by a JDK
 
 #### Issue 10 - Resolution/Workaround
 
-Re-generate the certificate(s) using the same version of JDK that is used by DXP.
+A.) Re-generate the certificate(s) using the same version of JDK that is used by DXP.
+B.) Use `JKS` format instead of `PKCS12` for the keystore
+C.) Use the `-Dkeystore.pkcs12.legacy` option with keytool to set the `keystore.pkcs12.legacy` system property and force OpenJDK 11/16's keytool to use the older algorithms (which are supported by Java 8 and 11)
 
 **Issue 10 - Related**
 
