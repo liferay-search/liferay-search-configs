@@ -6,6 +6,11 @@ This article is a repository of solutions and workarounds based on past cases. I
 
 https://learn.liferay.com/dxp/latest/en/using-search/installing-and-upgrading-a-search-engine/elasticsearch/troubleshooting-elasticsearch-installation.html
 
+## Troubleshooting Resources by Elastic
+
+* https://www.elastic.co/elasticon/archive/2021/global/troubleshooting-your-elasticsearch-cluster-like-an-elastic-support-engineer
+* https://github.com/elastic/support-diagnostics
+
 ## Information to Gather to help Diagnosing
 
 **Basic Information**
