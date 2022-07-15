@@ -8,6 +8,7 @@ https://learn.liferay.com/dxp/latest/en/using-search/installing-and-upgrading-a-
 
 ## Troubleshooting Resources by Elastic
 
+* https://www.elastic.co/guide/en/elasticsearch/reference/7.17/trb-security-sslhandshake.html
 * https://www.elastic.co/elasticon/archive/2021/global/troubleshooting-your-elasticsearch-cluster-like-an-elastic-support-engineer
 * https://github.com/elastic/support-diagnostics
 
