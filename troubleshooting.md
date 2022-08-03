@@ -836,7 +836,7 @@ Use the Search Insights widget, see https://learn.liferay.com/dxp/latest/en/usin
 
 ### Getting the search query for other kinds of index-based searches
 
-You can get it by setting the log level for `om.liferay.portal.search.elasticsearch7.internal.ElasticsearchIndexSearcher` to `INFO` level in the Server Admin. And format the Elasticsearch JSON with https://jsonformatter.curiousconcept.com for example.
+You can get it by setting the log level for `com.liferay.portal.search.elasticsearch7.internal.ElasticsearchIndexSearcher` to `INFO` level in the Server Admin. And format the Elasticsearch JSON with https://jsonformatter.curiousconcept.com for example.
 
 If you are on 7.1-7.2 and using ES6 (ootb), change the version in the package name from `7` to `6`.
 If you are on 7.0 and using ES2 (ootb), remove the version from the package name.
